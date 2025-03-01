@@ -22,7 +22,6 @@ header {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 2s ease-in-out;
 }
 
 /* Services List */
@@ -52,24 +51,94 @@ ul li:hover {
 
 /* Sample Sections */
 .samples {
-    margin: 20px;
+    margin: 20px auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     display: none;
-    animation: fadeIn 1s ease-in-out;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 
-.samples img, .samples video {
-    width: 80%;
+/* Adjusted Video and Image Sizes */
+.samples video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.samples img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     margin: 10px 0;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
 }
 
-.samples img:hover, .samples video:hover {
+/* Contact Form */
+.contact {
+    margin-top: 30px;
+    padding: 20px;
+    background: black;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px; /* Reduced max-width for better alignment */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Keeps text aligned to the left */
+    padding-left: 15px; /* Adjusts left padding */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
+}
+
+.contact h2 {
+    text-align: center; /* Keeps title centered */
+    margin-bottom: 10px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact input, .contact textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    width: 95%; /* Ensures fields are well aligned */
+    max-width: 450px; /* Prevents overly large fields */
+    font-size: 16px;
+    background: #fff;
+    color: black;
+}
+
+.contact textarea {
+    height: 120px; /* Ensures textarea is large enough */
+    resize: none; /* Prevents manual resizing */
+}
+
+.contact button {
+    background: pink;
+    color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 450px;
+}
+
+.contact button:hover {
+    background: purple;
+    color: white;
     transform: scale(1.05);
 }
 
@@ -111,25 +180,19 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* Mobile Responsiveness */
 @media screen and (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
     ul li {
         display: block;
         width: 80%;
         margin: 10px auto;
     }
 
-    .samples img, .samples video {
-        width: 100%;
+    .samples video, .samples img {
+        max-width: 100%;
+    }
+
+    .contact input, .contact textarea {
+        max-width: 100%;
     }
 }
