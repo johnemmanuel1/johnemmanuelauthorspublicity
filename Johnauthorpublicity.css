@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, peachpuff, pink, purple);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: black;
+    color: peachpuff;
+}
+
+/* Header */
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Services List */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: pink;
+    color: black;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+ul li:hover {
+    background: purple;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Sample Sections */
+.samples {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.samples img, .samples video {
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.samples img:hover, .samples video:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+footer a {
+    color: peachpuff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+button {
+    background: pink;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: purple;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    ul li {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .samples img, .samples video {
+        width: 100%;
+    }
+}

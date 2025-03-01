@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Emmanuel Authors Publicity</title>
+    <link rel="stylesheet" href="Johnauthorpublicity.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Welcome to John Emmanuel Authors Publicity 🎬</h1>
+        <p>Your #1 Choice for Book Promotions, Trailers, and Mockups</p>
+    </header>
+
+    <section>
+        <h2>📌 Our Services</h2>
+        <ul>
+            <li onclick="toggleSamples('promotion-samples')">📖 Book Promotion</li>
+            <li onclick="toggleSamples('trailer-samples')">🎬 Book Trailers</li>
+            <li onclick="toggleSamples('mockup-samples')">📚 Book Mockups</li>
+        </ul>
+    </section>
+
+    <!-- Sample Work Sections (Initially Hidden) -->
+    <section id="promotion-samples" class="samples">
+        <h2>🔥 Book Promotion Samples</h2>
+        <img src="promotion1.jpg" alt="Book Promotion 1" loading="lazy">
+        <img src="promotion2.jpg" alt="Book Promotion 2" loading="lazy">
+    </section>
+
+    <section id="trailer-samples" class="samples">
+        <h2>🎥 Book Trailer Samples</h2>
+        <video controls loading="lazy">
+            <source src="trailer1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="mockup-samples" class="samples">
+        <h2>📸 Book Mockup Samples</h2>
+        <img src="mockup1.jpg" alt="Book Mockup 1" loading="lazy">
+        <img src="mockup2.jpg" alt="Book Mockup 2" loading="lazy">
+    </section>
+
+    <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
+
+    <footer>
+        <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com">johnemmanuelauthorspublicity@gmail.com</a></p>
+    </footer>
+
+    <script src="Johnauthorpublicity.js"></script>
+</body>
+</html>
