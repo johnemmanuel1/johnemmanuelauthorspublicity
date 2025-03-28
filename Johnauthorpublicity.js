@@ -1,18 +1,37 @@
 window.onload = function () {
     let darkModeButton = document.getElementById("dark-mode-toggle");
+
+    // Check localStorage for dark mode preference
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+
     if (darkModeButton) {
         darkModeButton.addEventListener("click", function () {
             document.body.classList.toggle("dark-mode");
+
+            // Save preference in localStorage
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+            }
         });
     }
 
-    // Contact Form Submission
+    // Contact Form Submission with Loading Indicator
     let contactForm = document.getElementById("contact-form");
     if (contactForm) {
         contactForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevents default form submission
+            event.preventDefault();
 
             let form = this;
+            let submitButton = form.querySelector("button[type='submit']");
+            let confirmationMessage = document.getElementById("confirmation-message");
+
+            // Show loading state
+            submitButton.textContent = "Sending...";
+            submitButton.disabled = true;
 
             fetch(form.action, {
                 method: "POST",
@@ -20,13 +39,18 @@ window.onload = function () {
             })
             .then(response => {
                 if (response.ok) {
-                    document.getElementById("confirmation-message").style.display = "block";
-                    form.reset(); // Clear form fields
+                    confirmationMessage.style.display = "block";
+                    form.reset();
                 } else {
                     alert("Error sending message. Please try again.");
                 }
             })
-            .catch(error => console.error("Error:", error));
+            .catch(error => console.error("Error:", error))
+            .finally(() => {
+                // Reset button after submission
+                submitButton.textContent = "Send Message";
+                submitButton.disabled = false;
+            });
         });
     }
 };
@@ -34,10 +58,12 @@ window.onload = function () {
 // Function to show/hide sample sections smoothly
 function toggleSamples(sectionId) {
     let section = document.getElementById(sectionId);
-    if (section.style.display === "none" || section.style.display === "") {
+    section.classList.toggle("active");
+
+    if (section.classList.contains("active")) {
         section.style.display = "block";
         section.scrollIntoView({ behavior: 'smooth' });
     } else {
         section.style.display = "none";
     }
-}
+                }
