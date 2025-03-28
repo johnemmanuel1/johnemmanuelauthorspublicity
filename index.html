@@ -3,67 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Emmanuel Authors Publicity</title>
+    <title>John Emmanuel - Book Promotion</title>
     <link rel="stylesheet" href="Johnauthorpublicity.css">
 </head>
 <body>
-    <header>
-        <h1 class="fade-in">📚 Welcome to John Emmanuel Authors Publicity 🎬</h1>
-        <p class="fade-in">Your #1 Choice for Book Promotions, Trailers, and Mockups</p>
-    </header>
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
-    <section class="services">
-        <h2 class="slide-in">📌 Our Services</h2>
-        <ul>
-            <li onclick="toggleSamples('promotion-samples')">📖 Book Promotion</li>
-            <li onclick="toggleSamples('trailer-samples')">🎬 Book Trailers</li>
-            <li onclick="toggleSamples('mockup-samples')">📚 Book Mockups</li>
-        </ul>
-    </section>
-    <section id="trailer-samples" class="samples">
-        <h2>🎥 Book Trailer Samples</h2>
-        <video controls>
-            <source src="trailer1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-       <video controls>
-            <source src="trailer2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <!-- Book Slider Section -->
+    <section class="slider-container">
+        <h2>📚 Featured Books</h2>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide" onclick="openPopup('The Power of Self-Publishing', 'A guide to mastering self-publishing and making your book a bestseller.')">
+                    <img src="mockup1.jpg" alt="Book 1">
+                    <p class="book-title">The Power of Self-Publishing</p>
+                </div>
+                <div class="slide" onclick="openPopup('Marketing Your Book Like a Pro', 'Learn the best strategies to promote your book and reach more readers.')">
+                    <img src="mockup2.jpg" alt="Book 2">
+                    <p class="book-title">Marketing Your Book Like a Pro</p>
+                </div>
+                <div class="slide" onclick="openPopup('Writing That Sells', 'Discover the secrets of writing engaging books that readers love.')">
+                    <img src="mockup3.jpg" alt="Book 3">
+                    <p class="book-title">Writing That Sells</p>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
     </section>
 
-    <section id="mockup-samples" class="samples">
-        <h2>📸 Book Mockup Samples</h2>
-        <img src="mockup1.jpg" alt="Book Mockup 1">
-        <img src="mockup2.jpg" alt="Book Mockup 2">
+    <!-- Book Popup -->
+    <div class="popup" id="bookPopup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popupTitle">Book Title</h2>
+            <p id="popupDescription">This is a book description...</p>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>📢 What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"John Emmanuel's book promotion services helped me reach thousands of new readers. Highly recommended!"</p>
+                <h4>- Sarah Johnson, Bestselling Author</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I struggled with marketing my books, but John's team made it easy and effective!"</p>
+                <h4>- Mark Thompson, Self-Published Author</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Professional, creative, and results-driven! My book sales increased significantly!"</p>
+                <h4>- Emily Davis, Indie Writer</h4>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Form -->
     <section class="contact">
-        <h2>📩 Contact Me</h2>
-   <form id="contact-form" action="https://formsubmit.co/johnemmanuelauthorspublicity@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-</form>
-<p id="confirmation-message" style="display: none; color: green; font-weight: bold;">Message Sent Successfully!</p>
+        <h2>📞 Contact Us</h2>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="confirmation-message" style="display: none;">✅ Message Sent Successfully!</p>
     </section>
-
-    <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
-
-    <footer>
-        <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com">johnemmanuelauthorspublicity@gmail.com</a></p>
-        <p>📲 Follow Me:</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?0=61554787956999" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-        </div>
-    </footer>
 
     <script src="Johnauthorpublicity.js"></script>
 </body>
-</html>
+        </html>
