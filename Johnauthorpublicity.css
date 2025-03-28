@@ -1,23 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f8f8f8;
+    font-family: 'Poppins', sans-serif;
+    background: white;
     color: black;
+    text-align: center;
     margin: 0;
-    padding: 0;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background: black;
-    color: white;
-}
-
-/* Header & Navigation */
-header {
-    background: #222;
-    color: white;
-    padding: 15px;
 }
 
 nav ul {
@@ -27,82 +13,35 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 10px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-}
-
-/* Dark Mode Toggle */
-#dark-mode-toggle {
-    margin: 10px;
-    padding: 10px 20px;
-    background: purple;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Book Slider */
-.slider-container {
-    margin: 20px auto;
-    padding: 20px;
+    font-weight: bold;
+    color: black;
 }
 
 .slider {
     position: relative;
-    width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
 }
 
-.slides {
+.slider-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .slide {
     min-width: 100%;
-    cursor: pointer;
+    transition: 0.5s;
 }
 
-.slide img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.popup-content {
-    color: black;
-}
-
-.close {
+.prev, .next {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
     cursor: pointer;
 }
-
-/* Footer */
-footer {
-    background: #222;
-    color: white;
-    padding: 10px;
-    }
