@@ -3,92 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Emmanuel - Book Promotion</title>
+    <title>John Emmanuel Authors Publicity</title>
     <link rel="stylesheet" href="Johnauthorpublicity.css">
 </head>
 <body>
-    <!-- Navigation -->
     <header>
-        <h1>John Emmanuel - Book Promotion</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <h1>📚 Welcome to John Emmanuel Authors Publicity 🎬</h1>
+        <p>Your #1 Choice for Book Promotions, Trailers, and Mockups</p>
     </header>
 
-    <!-- Book Slider Section -->
-    <section class="slider-container">
-        <h2>📚 Featured Books</h2>
-        <div class="slider">
-            <div class="slides">
-                <div class="slide" onclick="openPopup('The Power of Self-Publishing', 'A guide to mastering self-publishing and making your book a bestseller.')">
-                    <img src="mockup1.jpg" alt="Book 1">
-                    <p class="book-title">The Power of Self-Publishing</p>
-                </div>
-                <div class="slide" onclick="openPopup('Marketing Your Book Like a Pro', 'Learn the best strategies to promote your book and reach more readers.')">
-                    <img src="mockup2.jpg" alt="Book 2">
-                    <p class="book-title">Marketing Your Book Like a Pro</p>
-                </div>
-                <div class="slide" onclick="openPopup('Writing That Sells', 'Discover the secrets of writing engaging books that readers love.')">
-                    <img src="mockup3.jpg" alt="Book 3">
-                    <p class="book-title">Writing That Sells</p>
-                </div>
-            </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="services.html">🎯 Services</a></li>
+            <li><a href="testimonials.html">⭐ Testimonials</a></li>
+            <li><a href="contact.html">📩 Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Book Popup -->
-    <div class="popup" id="bookPopup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2 id="popupTitle">Book Title</h2>
-            <p id="popupDescription">This is a book description...</p>
-        </div>
-    </div>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>📢 What Our Clients Say</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p>"John Emmanuel's book promotion services helped me reach thousands of new readers. Highly recommended!"</p>
-                <h4>- Sarah Johnson, Bestselling Author</h4>
+    <section class="slider">
+        <h2>Featured Works</h2>
+        <div class="slider-container">
+            <div class="slide">
+                <img src="mockup1.jpg" alt="Book Mockup 1">
             </div>
-            <div class="testimonial">
-                <p>"I struggled with marketing my books, but John's team made it easy and effective!"</p>
-                <h4>- Mark Thompson, Self-Published Author</h4>
+            <div class="slide">
+                <img src="mockup2.jpg" alt="Book Mockup 2">
             </div>
-            <div class="testimonial">
-                <p>"Professional, creative, and results-driven! My book sales increased significantly!"</p>
-                <h4>- Emily Davis, Indie Writer</h4>
+            <div class="slide">
+                <video controls>
+                    <source src="trailer1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide">
+                <video controls>
+                    <source src="trailer2.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <button class="next" onclick="moveSlide(1)">❯</button>
     </section>
 
-    <!-- Contact Form -->
-    <section class="contact">
-        <h2>📞 Contact Us</h2>
-        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="confirmation-message" style="display: none;">✅ Message Sent Successfully!</p>
-    </section>
+    <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 John Emmanuel. All rights reserved.</p>
+        <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com">johnemmanuelauthorspublicity@gmail.com</a></p>
+        <p>📲 Follow Me: <a href="https://www.facebook.com/profile.php?id=61554787956999" target="_blank">Facebook</a></p>
     </footer>
 
     <script src="Johnauthorpublicity.js"></script>
 </body>
-    </html>
+            </html>
