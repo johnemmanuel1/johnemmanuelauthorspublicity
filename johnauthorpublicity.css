@@ -1,200 +1,69 @@
-/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
+    background: white;
+    color: black;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
 }
 
-/* Navigation Bar */
-.navbar {
+nav ul {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #ffccd5;
-    padding: 15px 0;
-    flex-wrap: wrap;
-    gap: 20px;
+    background-color: #007BFF;
 }
 
-.navbar a {
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: black;
     font-weight: bold;
-    padding: 10px 15px;
-    transition: all 0.3s ease-in-out;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.navbar a:hover {
-    background-color: #ff4081;
     color: white;
+    transition: 0.3s;
 }
 
-/* Home Section */
-.home-header {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+nav ul li a:hover {
+    color: yellow;
 }
 
-.home-header h1 {
-    font-size: 28px;
-    font-weight: bold;
+.slider {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
 }
 
-.home-header p {
-    font-size: 18px;
-}
-
-/* Featured Works Section */
-.featured-works {
-    text-align: center;
-    padding: 30px;
-}
-
-.featured-works img {
-    width: 250px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.featured-works img:hover {
-    transform: scale(1.05);
-}
-
-/* Carousel Navigation */
-.carousel-nav {
+.slider-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 350px;
+    overflow: hidden;
 }
 
-.carousel-nav button {
+.slide {
+    min-width: 100%;
+    transition: 0.5s;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#dark-mode-toggle {
     background-color: black;
     color: white;
+    padding: 10px 20px;
     border: none;
-    padding: 12px;
-    border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
-.carousel-nav button:hover {
-    background-color: #ff4081;
+#dark-mode-toggle:hover {
+    background-color: white;
+    color: black;
 }
-
-/* Toggle Button Section */
-.toggle-section {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: white;
-    border-radius: 8px;
-    margin: 20px auto;
-    width: 80%;
-}
-
-.toggle-button {
-    background-color: #ff4081;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background 0.3s;
-}
-
-.toggle-button:hover {
-    background-color: #ff80ab;
-}
-
-/* Contact Form */
-.contact-form {
-    background-color: #fff;
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ff4081;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.contact-form textarea {
-    resize: none;
-    height: 120px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #ff4081;
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #ff80ab;
-}
-
-/* Footer Section */
-.footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-}
-
-.footer a {
-    color: #ff4081;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer a:hover {
-    color: #ff80ab;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .carousel-nav {
-        max-width: 250px;
-    }
-
-    .contact-form {
-        width: 90%;
-    }
-  }
