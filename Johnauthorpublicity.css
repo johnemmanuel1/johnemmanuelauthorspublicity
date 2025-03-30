@@ -1,15 +1,24 @@
+/* Color Variables */
+:root {
+    --primary-color: #004aad;
+    --secondary-color: #002a80;
+    --hover-color: #007bff;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+}
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Header */
 header {
-    background-color: #004aad;
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 20px;
@@ -17,7 +26,7 @@ header {
 
 /* Navigation Bar */
 nav {
-    background-color: #002a80;
+    background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -45,7 +54,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #007bff;
+    background-color: var(--hover-color);
 }
 
 /* Section Styling */
@@ -105,7 +114,7 @@ section {
 }
 
 .service-card h3 {
-    color: #004aad;
+    color: var(--primary-color);
 }
 
 /* Testimonials Page */
@@ -114,7 +123,7 @@ section {
     padding: 15px;
     margin: 10px;
     border-radius: 10px;
-    border-left: 5px solid #004aad;
+    border-left: 5px solid var(--primary-color);
 }
 
 /* Contact Form */
@@ -136,7 +145,7 @@ input, textarea {
 }
 
 button {
-    background-color: #004aad;
+    background-color: var(--primary-color);
     color: white;
     padding: 10px;
     border: none;
@@ -146,13 +155,13 @@ button {
 }
 
 button:hover {
-    background-color: #007bff;
+    background-color: var(--hover-color);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    background-color: #002a80;
+    background-color: var(--secondary-color);
     color: white;
     padding: 10px;
     position: relative;
@@ -170,4 +179,4 @@ footer {
     section {
         width: 90%;
     }
-}
+                          }
