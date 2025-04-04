@@ -6,6 +6,12 @@ function moveSlide(step) {
     document.querySelector(".slider-container").style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-document.getElementById("dark-mode-toggle").addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
+// Dark Mode Toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("dark-mode-toggle");
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    }
 });
