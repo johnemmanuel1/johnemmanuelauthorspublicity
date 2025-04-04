@@ -1,13 +1,19 @@
-/* Color Variables */
 :root {
     --primary-color: #004aad;
     --secondary-color: #002a80;
     --hover-color: #007bff;
     --background-color: #f4f4f4;
     --text-color: #333;
+    --card-bg: white;
 }
 
-/* General Styles */
+/* Dark Mode Variables */
+body.dark-mode {
+    --background-color: #1c1c1c;
+    --text-color: #f4f4f4;
+    --card-bg: #2c2c2c;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -22,9 +28,22 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
-/* Navigation Bar */
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--hover-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Navigation */
 nav {
     background-color: var(--secondary-color);
     display: flex;
@@ -34,19 +53,14 @@ nav {
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
     gap: 20px;
-}
-
-nav ul li {
-    display: inline;
+    padding: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
@@ -57,105 +71,29 @@ nav ul li a:hover {
     background-color: var(--hover-color);
 }
 
-/* Section Styling */
+/* Sections */
 section {
     max-width: 900px;
     margin: 20px auto;
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Home Page - Slider */
-.slider {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-}
-
-.slider-container {
-    display: flex;
-    overflow: hidden;
-}
-
-.slide {
-    min-width: 100%;
-    transition: 0.5s;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Services Page */
-.service-card {
-    background: #e3f2fd;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.service-card h3 {
-    color: var(--primary-color);
-}
-
-/* Testimonials Page */
+/* Testimonials */
 .testimonial {
     background: #eaf4ff;
     padding: 15px;
-    margin: 10px;
+    margin: 10px 0;
     border-radius: 10px;
     border-left: 5px solid var(--primary-color);
-}
-
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-label {
-    font-weight: bold;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
     font-size: 16px;
-    cursor: pointer;
 }
 
-button:hover {
-    background-color: var(--hover-color);
+body.dark-mode .testimonial {
+    background: #333;
+    border-left: 5px solid var(--hover-color);
 }
 
 /* Footer */
@@ -164,12 +102,9 @@ footer {
     background-color: var(--secondary-color);
     color: white;
     padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -179,4 +114,4 @@ footer {
     section {
         width: 90%;
     }
-                          }
+    }
