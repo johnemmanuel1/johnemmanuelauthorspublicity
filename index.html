@@ -65,31 +65,17 @@
       <p>With years of experience promoting books online, we’re your one-stop solution for increasing visibility and building your author brand. Let’s work together to make your book a success!</p>
     </section>
 
-    <!-- Book Mockup Section -->
-    <section>
-      <h2 style="text-align:center;">Book Mockup Gallery</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-        <!-- 30 mockup image slots -->
-        <!-- Replace mockupX.jpg with real images -->
-        ${Array.from({ length: 30 }, (_, i) => `<img src="mockup${i + 1}.jpg" alt="Mockup ${i + 1}" style="max-width: 180px; border-radius: 8px;">`).join('\n')}
-      </div>
-    </section>
+<!-- Book Mockup Section -->
+<section>
+  <h2 style="text-align:center;">Book Mockup Gallery</h2>
+  <div id="mockup-gallery" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;"></div>
+</section>
 
-    <!-- Book Trailer Section -->
-    <section>
-      <h2 style="text-align:center;">Book Trailers</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <!-- 15 video slots -->
-        <!-- Replace trailerX.mp4 with real videos -->
-        ${Array.from({ length: 15 }, (_, i) => `
-          <video controls style="max-width: 300px; border-radius: 10px;">
-            <source src="trailer${i + 1}.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>`).join('\n')}
-      </div>
-    </section>
-  </main>
-
+<!-- Book Trailer Section -->
+<section>
+  <h2 style="text-align:center;">Book Trailers</h2>
+  <div id="trailer-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;"></div>
+</section>
   <footer>
     <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com">johnemmanuelauthorspublicity@gmail.com</a></p>
   </footer>
