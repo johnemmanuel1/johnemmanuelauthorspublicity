@@ -221,6 +221,16 @@ footer a:hover {
   text-decoration: none;
 }
 
+/* Logo Styling */
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--main-pink);
+  box-shadow: 0 0 8px rgba(255, 79, 168, 0.4);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   nav ul {
@@ -235,5 +245,4 @@ footer a:hover {
   #dark-mode-toggle {
     margin-top: 15px;
   }
-    }
-  
+}
