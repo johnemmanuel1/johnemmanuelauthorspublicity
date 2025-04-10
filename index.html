@@ -10,7 +10,7 @@
   <meta name="keywords" content="book promotion, author website, Amazon A+ content, book trailer, author branding, book marketing, John Emmanuel book promoter, book mockup services, social media promotion for authors">
   <meta name="author" content="John Emmanuel Authors Publicity">
 
-  <!-- Open Graph Meta (Facebook, LinkedIn) -->
+  <!-- Open Graph Meta -->
   <meta property="og:title" content="Professional Book Promotion Services | John Emmanuel Authors Publicity">
   <meta property="og:description" content="Book trailers, mockups, author branding, and Amazon A+ Content. Let John Emmanuel help you stand out.">
   <meta property="og:image" content="mockup1.jpg">
@@ -27,6 +27,7 @@
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="John Emmanuel Logo" style="max-width: 150px; margin-bottom: 10px;" />
     <h1>Welcome to John Emmanuel Authors Publicity</h1>
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
   </header>
@@ -54,7 +55,7 @@
 
     <section class="intro">
       <h2>Boost Your Book's Success</h2>
-      <p>At <strong>John Emmanuel Authors Publicity</strong>, we help authors unlock their book's full potential with a blend of creative visuals, strategic promotion, and professional support. Whether you're self-published or traditionally published, our services are tailored to give your book the spotlight it deserves.</p>
+      <p>At <strong>John Emmanuel Authors Publicity</strong>, we help authors unlock their book's full potential with a blend of creative visuals, strategic promotion, and professional support.</p>
       <ul>
         <li>📽️ <strong>Captivating Book Trailers</strong> that grab attention</li>
         <li>🖼️ <strong>Professional Book Mockups</strong> for promotion and ads</li>
@@ -63,13 +64,36 @@
       </ul>
       <p>With years of experience promoting books online, we’re your one-stop solution for increasing visibility and building your author brand. Let’s work together to make your book a success!</p>
     </section>
+
+    <!-- Book Mockup Section -->
+    <section>
+      <h2 style="text-align:center;">Book Mockup Gallery</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+        <!-- 30 mockup image slots -->
+        <!-- Replace mockupX.jpg with real images -->
+        ${Array.from({ length: 30 }, (_, i) => `<img src="mockup${i + 1}.jpg" alt="Mockup ${i + 1}" style="max-width: 180px; border-radius: 8px;">`).join('\n')}
+      </div>
+    </section>
+
+    <!-- Book Trailer Section -->
+    <section>
+      <h2 style="text-align:center;">Book Trailers</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <!-- 15 video slots -->
+        <!-- Replace trailerX.mp4 with real videos -->
+        ${Array.from({ length: 15 }, (_, i) => `
+          <video controls style="max-width: 300px; border-radius: 10px;">
+            <source src="trailer${i + 1}.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>`).join('\n')}
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com" style="color:white; text-decoration: underline;">johnemmanuelauthorspublicity@gmail.com</a></p>
+    <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com">johnemmanuelauthorspublicity@gmail.com</a></p>
   </footer>
 
   <script src="Johnauthorpublicity.js"></script>
 </body>
-  </html>
-            
+</html>
