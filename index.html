@@ -43,16 +43,18 @@
   </nav>
 
   <main>
+    <!-- Slider Section -->
     <section class="slider">
-      <div class="slider-container">
-        <img src="mockup1.jpg" alt="Book Promotion" class="slide" />
-        <img src="mockup2.jpg" alt="Author Branding" class="slide" />
-        <img src="mockup3.jpg" alt="Book Trailer" class="slide" />
+      <div class="slider-container" id="slider-container">
+        <div class="slide"><img src="mockup1.jpg" alt="Book Promotion" /></div>
+        <div class="slide"><img src="mockup2.jpg" alt="Author Branding" /></div>
+        <div class="slide"><img src="mockup3.jpg" alt="Book Trailer" /></div>
       </div>
-      <span class="prev" onclick="moveSlide(-1)">❮</span>
-      <span class="next" onclick="moveSlide(1)">❯</span>
+      <button class="prev" onclick="moveSlide(-1)">❮</button>
+      <button class="next" onclick="moveSlide(1)">❯</button>
     </section>
 
+    <!-- Introduction Section -->
     <section class="intro">
       <h2>Boost Your Book's Success</h2>
       <p>At <strong>John Emmanuel Authors Publicity</strong>, we help authors unlock their book's full potential with a blend of creative visuals, strategic promotion, and professional support.</p>
@@ -65,17 +67,23 @@
       <p>With years of experience promoting books online, we’re your one-stop solution for increasing visibility and building your author brand. Let’s work together to make your book a success!</p>
     </section>
 
-<!-- Book Mockup Section -->
-<section>
-  <h2 style="text-align:center;">Book Mockup Gallery</h2>
-  <div id="mockup-gallery" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;"></div>
-</section>
+    <!-- Book Mockup Gallery -->
+    <section>
+      <h2 style="text-align:center;">Book Mockup Gallery</h2>
+      <div id="mockup-gallery" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+        <!-- Mockup thumbnails will be inserted here via JavaScript -->
+      </div>
+    </section>
 
-<!-- Book Trailer Section -->
-<section>
-  <h2 style="text-align:center;">Book Trailers</h2>
-  <div id="trailer-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;"></div>
-</section>
+    <!-- Book Trailer Section -->
+    <section>
+      <h2 style="text-align:center;">Book Trailers</h2>
+      <div id="trailer-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <!-- Trailer video thumbnails will be inserted here via JavaScript -->
+      </div>
+    </section>
+  </main>
+
   <footer>
     <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com">johnemmanuelauthorspublicity@gmail.com</a></p>
   </footer>
