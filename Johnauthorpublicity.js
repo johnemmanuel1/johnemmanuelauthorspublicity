@@ -22,7 +22,6 @@ if (toggle) {
       toggle.innerText = "Dark Mode";
     }
   });
-                  }
 // Render Book Mockups
 const mockupGallery = document.getElementById("mockup-gallery");
 mockupGallery.innerHTML = Array.from({ length: 30 }, (_, i) => `
@@ -37,3 +36,4 @@ trailerGallery.innerHTML = Array.from({ length: 15 }, (_, i) => `
     Your browser does not support the video tag.
   </video>
 `).join('');
+                  }
