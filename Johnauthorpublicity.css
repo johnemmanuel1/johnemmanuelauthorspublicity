@@ -16,7 +16,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* DARK MODE */
 body.dark-mode {
   --text-color: #fff;
   --background-color: #121212;
@@ -29,6 +28,16 @@ header {
   color: white;
   padding: 20px;
   text-align: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--main-pink);
+  box-shadow: 0 0 8px rgba(255, 79, 168, 0.4);
+  margin-bottom: 10px;
 }
 
 #dark-mode-toggle {
@@ -138,48 +147,58 @@ button:hover {
   background-color: var(--hover-color);
 }
 
-/* Slider */
-.slider {
+/* Custom Sliders */
+.custom-slider {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
-.slider-container {
+.custom-slider-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
 }
 
-.slide {
-  flex-shrink: 0;
-  width: 100%;
+.custom-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
-.slide img, .slide video {
+.custom-slide img,
+.custom-slide video {
   width: 100%;
   height: auto;
-  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Slider buttons */
-.prev, .next {
+.custom-prev,
+.custom-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
-  background: rgba(255, 79, 168, 0.8);
+  background: var(--main-pink);
   color: white;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
+  padding: 10px 14px;
   border-radius: 50%;
-  z-index: 1;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.custom-prev:hover,
+.custom-next:hover {
+  background: var(--hover-color);
+}
+
+.custom-prev { left: 10px; }
+.custom-next { right: 10px; }
 
 /* Footer */
 footer {
@@ -194,7 +213,7 @@ footer p {
   font-size: 16px;
 }
 
-/* Styled Links - email, Facebook, etc */
+/* Styled Links */
 a {
   color: var(--main-pink);
   text-decoration: none;
@@ -209,7 +228,6 @@ a:hover {
   border-bottom-color: var(--main-pink);
 }
 
-/* Footer-specific link style */
 footer a {
   color: white;
   text-decoration: underline;
@@ -221,25 +239,15 @@ footer a:hover {
   text-decoration: none;
 }
 
-/* Logo Styling */
-.logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--main-pink);
-  box-shadow: 0 0 8px rgba(255, 79, 168, 0.4);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
   }
 
-  .prev, .next {
-    font-size: 18px;
+  .custom-prev, .custom-next {
     padding: 6px 10px;
+    font-size: 16px;
   }
 
   #dark-mode-toggle {
