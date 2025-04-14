@@ -10,14 +10,13 @@
   <meta name="keywords" content="book promotion, author website, Amazon A+ content, book trailer, author branding, book marketing, John Emmanuel book promoter, book mockup services, social media promotion for authors">
   <meta name="author" content="John Emmanuel Authors Publicity">
 
-  <!-- Open Graph Meta -->
+  <!-- Social Sharing Meta -->
   <meta property="og:title" content="Professional Book Promotion Services | John Emmanuel Authors Publicity">
   <meta property="og:description" content="Book trailers, mockups, author branding, and Amazon A+ Content. Let John Emmanuel help you stand out.">
   <meta property="og:image" content="mockup1.jpg">
   <meta property="og:url" content="https://yourdomain.com">
   <meta property="og:type" content="website">
 
-  <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Professional Book Promotion Services | John Emmanuel">
   <meta name="twitter:description" content="Creative book promotion services for authors.">
@@ -27,7 +26,7 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="John Emmanuel Logo" style="max-width: 150px; margin-bottom: 10px;" />
+    <img src="logo.png" alt="John Emmanuel Logo" class="circular-logo" />
     <h1>Welcome to John Emmanuel Authors Publicity</h1>
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
   </header>
@@ -43,18 +42,7 @@
   </nav>
 
   <main>
-    <!-- Slider Section -->
-    <section class="slider">
-      <div class="slider-container" id="slider-container">
-        <div class="slide"><img src="mockup1.jpg" alt="Book Promotion" /></div>
-        <div class="slide"><img src="mockup2.jpg" alt="Author Branding" /></div>
-        <div class="slide"><img src="mockup3.jpg" alt="Book Trailer" /></div>
-      </div>
-      <button class="prev" onclick="moveSlide(-1)">❮</button>
-      <button class="next" onclick="moveSlide(1)">❯</button>
-    </section>
-
-    <!-- Introduction Section -->
+    <!-- Intro Section -->
     <section class="intro">
       <h2>Boost Your Book's Success</h2>
       <p>At <strong>John Emmanuel Authors Publicity</strong>, we help authors unlock their book's full potential with a blend of creative visuals, strategic promotion, and professional support.</p>
@@ -67,19 +55,27 @@
       <p>With years of experience promoting books online, we’re your one-stop solution for increasing visibility and building your author brand. Let’s work together to make your book a success!</p>
     </section>
 
-    <!-- Book Mockup Gallery -->
-    <section>
+    <!-- Book Mockup Slider -->
+    <section class="gallery-section">
       <h2 style="text-align:center;">Book Mockup Gallery</h2>
-      <div id="mockup-gallery" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-        <!-- Mockup thumbnails will be inserted here via JavaScript -->
+      <div class="gallery-slider" id="mockup-slider">
+        <div class="gallery-track" id="mockup-gallery">
+          <!-- JavaScript will insert mockup images here -->
+        </div>
+        <button class="gallery-prev" onclick="slideGallery('mockup', -1)">❮</button>
+        <button class="gallery-next" onclick="slideGallery('mockup', 1)">❯</button>
       </div>
     </section>
 
-    <!-- Book Trailer Section -->
-    <section>
+    <!-- Book Trailer Slider -->
+    <section class="gallery-section">
       <h2 style="text-align:center;">Book Trailers</h2>
-      <div id="trailer-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <!-- Trailer video thumbnails will be inserted here via JavaScript -->
+      <div class="gallery-slider" id="trailer-slider">
+        <div class="gallery-track" id="trailer-gallery">
+          <!-- JavaScript will insert trailer video thumbnails here -->
+        </div>
+        <button class="gallery-prev" onclick="slideGallery('trailer', -1)">❮</button>
+        <button class="gallery-next" onclick="slideGallery('trailer', 1)">❯</button>
       </div>
     </section>
   </main>
