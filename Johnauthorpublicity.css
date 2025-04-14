@@ -1,205 +1,64 @@
-/* Root Variables for Theme */
-:root {
-  --main-pink: #ff4fa8;
-  --main-purple: linear-gradient(to right, #ff4fa8, #a56bff);
-  --text-color: #000;
-  --bg-color: #fff;
-  --header-bg: #fff5f9;
-  --dark-bg: #121212;
-  --dark-text: #f0f0f0;
-}
+/* Updated CSS for John Emmanuel Authors Publicity */
 
-/* Dark Mode Support */
-body.dark-mode {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
-body.dark-mode header {
-  background-color: #1e1e1e;
-}
-body.dark-mode nav {
-  background-color: #222;
-}
-body.dark-mode nav a {
-  color: #f0f0f0;
-}
-body.dark-mode .gallery-section {
-  background-color: #1a1a1a;
-}
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffcba4; /* peach */ color: black; transition: background-color 0.3s, color 0.3s; }
 
-/* General Styling */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
+header { background: linear-gradient(90deg, pink, #d18be3); /* pink to purple gradient */ padding: 1em; text-align: center; color: black; }
 
-header {
-  background-color: var(--header-bg);
-  text-align: center;
-  padding: 20px 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
+.circular-logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 3px solid black; }
 
-h1, h2 {
-  margin: 10px 0;
-  color: var(--main-pink);
-}
+nav ul { list-style-type: none; background-color: pink; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
 
-p, li {
-  font-size: 1rem;
-  line-height: 1.6;
-}
+nav ul li { margin: 0.5em; }
 
-/* Logo Styling */
-.circular-logo {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--main-pink);
-  box-shadow: 0 0 10px rgba(255, 79, 168, 0.5);
-  margin-bottom: 10px;
-}
+nav ul li a { text-decoration: none; color: black; font-weight: bold; padding: 0.5em 1em; border: 2px solid black; border-radius: 10px; background-color: #ffb6c1; }
 
-/* Navigation */
-nav {
-  background: var(--main-purple);
-  padding: 10px;
-  text-align: center;
-}
+nav ul li a:hover { background-color: black; color: pink; }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.intro { background-color: #ffd6af; padding: 2em; border-bottom: 4px solid black; text-align: center; }
 
-nav ul li {
-  display: inline-block;
-  margin: 0 12px;
-}
+.gallery-section { padding: 2em; background-color: #ffb6c1; border-top: 2px solid black; border-bottom: 2px solid black; }
 
-nav a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
+.gallery-slider { position: relative; overflow: hidden; margin-top: 1em; }
 
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+.gallery-track { display: flex; transition: transform 0.5s ease; gap: 10px; }
 
-/* Main Content */
-.intro {
-  padding: 30px 15px;
-  background: #fff0f7;
-  text-align: center;
-}
+.gallery-prev, .gallery-next { position: absolute; top: 50%; transform: translateY(-50%); background-color: black; color: pink; border: none; padding: 0.5em 1em; cursor: pointer; z-index: 10; }
 
-.intro ul {
-  list-style: none;
-  padding: 0;
-}
+.gallery-prev { left: 0; }
 
-.intro li {
-  padding: 8px 0;
-  font-weight: 500;
-}
+.gallery-next { right: 0; }
 
-/* Gallery Section */
-.gallery-section {
-  padding: 40px 20px;
-  background: #fdf8fb;
-  border-top: 2px solid #ffe0f1;
-  margin-top: 20px;
-}
+footer { background-color: black; color: pink; text-align: center; padding: 1em; }
 
-.gallery-slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+footer a { color: #ffcba4; font-weight: bold; text-decoration: none; }
 
-.gallery-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 20px;
-}
+footer a:hover { text-decoration: underline; color: white; }
 
-.gallery-track img,
-.gallery-track video {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+form { background-color: #ffd6af; padding: 2em; border: 2px solid black; border-radius: 10px; max-width: 600px; margin: 2em auto; }
 
-/* Gallery Controls */
-.gallery-prev,
-.gallery-next {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  background: var(--main-pink);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
+form input, form textarea, form button { display: block; width: 100%; margin-bottom: 1em; padding: 0.7em; font-size: 1em; border-radius: 5px; border: 2px solid black; }
 
-.gallery-prev {
-  left: 10px;
-}
-.gallery-next {
-  right: 10px;
-}
+form input, form textarea { background-color: #ffe6d5; color: black; }
 
-/* Footer */
-footer {
-  background-color: var(--header-bg);
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  font-size: 0.95rem;
-}
+form button { background-color: black; color: pink; cursor: pointer; font-weight: bold; }
 
-/* Dark Mode Toggle */
-#dark-mode-toggle {
-  background: var(--main-pink);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  font-size: 0.95rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+form button:hover { background-color: pink; color: black; }
 
-#dark-mode-toggle:hover {
-  background: #ff2e91;
-}
+/* Dark Mode */ .dark-mode { background-color: black; color: #ffcba4; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
+.dark-mode header { background: linear-gradient(90deg, #c71585, #800080); color: peachpuff; }
 
-  .gallery-track img,
-  .gallery-track video {
-    width: 90%;
-  }
-}
+.dark-mode nav ul li a { background-color: #800080; color: peachpuff; border-color: peachpuff; }
+
+.dark-mode nav ul li a:hover { background-color: peachpuff; color: black; }
+
+.dark-mode .intro, .dark-mode .gallery-section, .dark-mode form { background-color: #333; color: #ffcba4; }
+
+.dark-mode form input, .dark-mode form textarea { background-color: #555; color: #ffcba4; }
+
+.dark-mode form button { background-color: peachpuff; color: black; }
+
+.dark-mode form button:hover { background-color: pink; color: black; }
+
+.dark-mode footer { background-color: #111; color: #ffcba4; }
+
