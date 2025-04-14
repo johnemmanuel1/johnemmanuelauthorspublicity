@@ -1,64 +1,259 @@
-/* Updated CSS for John Emmanuel Authors Publicity */
+/* Root Variables */
+:root {
+  --pink: #ff69b4;
+  --peach: #ffb347;
+  --black: #000000;
+  --text-light: #ffe4e1;
+  --text-dark: #ffffff;
+}
 
-body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffcba4; /* peach */ color: black; transition: background-color 0.3s, color 0.3s; }
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-header { background: linear-gradient(90deg, pink, #d18be3); /* pink to purple gradient */ padding: 1em; text-align: center; color: black; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--pink);
+  color: var(--black);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
 
-.circular-logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 3px solid black; }
+header {
+  background: linear-gradient(to right, var(--pink), var(--peach));
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
 
-nav ul { list-style-type: none; background-color: pink; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+.circular-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  border: 3px solid var(--black);
+}
 
-nav ul li { margin: 0.5em; }
+/* Navigation */
+nav {
+  background-color: var(--black);
+}
 
-nav ul li a { text-decoration: none; color: black; font-weight: bold; padding: 0.5em 1em; border: 2px solid black; border-radius: 10px; background-color: #ffb6c1; }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-nav ul li a:hover { background-color: black; color: pink; }
+nav ul li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--peach);
+  text-decoration: none;
+  font-weight: bold;
+}
 
-.intro { background-color: #ffd6af; padding: 2em; border-bottom: 4px solid black; text-align: center; }
+nav ul li a:hover {
+  background-color: var(--pink);
+  color: var(--black);
+}
 
-.gallery-section { padding: 2em; background-color: #ffb6c1; border-top: 2px solid black; border-bottom: 2px solid black; }
+/* Main Section */
+main {
+  padding: 2rem 1rem;
+}
 
-.gallery-slider { position: relative; overflow: hidden; margin-top: 1em; }
+.intro {
+  background-color: var(--peach);
+  padding: 2rem;
+  border-radius: 10px;
+  color: var(--black);
+  margin-bottom: 2rem;
+}
 
-.gallery-track { display: flex; transition: transform 0.5s ease; gap: 10px; }
+/* Gallery Section */
+.gallery-section {
+  margin: 2rem 0;
+}
 
-.gallery-prev, .gallery-next { position: absolute; top: 50%; transform: translateY(-50%); background-color: black; color: pink; border: none; padding: 0.5em 1em; cursor: pointer; z-index: 10; }
+.gallery-slider {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 10px;
+}
 
-.gallery-prev { left: 0; }
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 1rem;
+}
 
-.gallery-next { right: 0; }
+.gallery-track img,
+.gallery-track video {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
 
-footer { background-color: black; color: pink; text-align: center; padding: 1em; }
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--pink);
+  color: var(--black);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 5px;
+}
 
-footer a { color: #ffcba4; font-weight: bold; text-decoration: none; }
+.gallery-prev {
+  left: 10px;
+}
 
-footer a:hover { text-decoration: underline; color: white; }
+.gallery-next {
+  right: 10px;
+}
 
-form { background-color: #ffd6af; padding: 2em; border: 2px solid black; border-radius: 10px; max-width: 600px; margin: 2em auto; }
+/* Contact Form */
+form {
+  background-color: var(--black);
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 2rem auto;
+  color: var(--peach);
+}
 
-form input, form textarea, form button { display: block; width: 100%; margin-bottom: 1em; padding: 0.7em; font-size: 1em; border-radius: 5px; border: 2px solid black; }
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--pink);
+}
 
-form input, form textarea { background-color: #ffe6d5; color: black; }
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--peach);
+  border-radius: 8px;
+  background-color: var(--peach);
+  color: var(--black);
+  font-size: 1rem;
+}
 
-form button { background-color: black; color: pink; cursor: pointer; font-weight: bold; }
+form button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--pink);
+  color: var(--black);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
 
-form button:hover { background-color: pink; color: black; }
+form button:hover {
+  background-color: var(--black);
+  color: var(--peach);
+}
 
-/* Dark Mode */ .dark-mode { background-color: black; color: #ffcba4; }
+/* Footer */
+footer {
+  background-color: var(--black);
+  color: var(--pink);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
 
-.dark-mode header { background: linear-gradient(90deg, #c71585, #800080); color: peachpuff; }
+footer a {
+  color: var(--peach);
+  font-weight: bold;
+  text-decoration: none;
+}
 
-.dark-mode nav ul li a { background-color: #800080; color: peachpuff; border-color: peachpuff; }
+footer a:hover {
+  text-decoration: underline;
+}
 
-.dark-mode nav ul li a:hover { background-color: peachpuff; color: black; }
+/* Dark Mode */
+body.dark-mode {
+  background-color: var(--black);
+  color: var(--text-light);
+}
 
-.dark-mode .intro, .dark-mode .gallery-section, .dark-mode form { background-color: #333; color: #ffcba4; }
+body.dark-mode header {
+  background: linear-gradient(to right, var(--black), var(--pink));
+  color: var(--text-light);
+}
 
-.dark-mode form input, .dark-mode form textarea { background-color: #555; color: #ffcba4; }
+body.dark-mode nav {
+  background-color: var(--pink);
+}
 
-.dark-mode form button { background-color: peachpuff; color: black; }
+body.dark-mode nav ul li a {
+  color: var(--black);
+}
 
-.dark-mode form button:hover { background-color: pink; color: black; }
+body.dark-mode nav ul li a:hover {
+  background-color: var(--peach);
+  color: var(--black);
+}
 
-.dark-mode footer { background-color: #111; color: #ffcba4; }
+body.dark-mode .intro {
+  background-color: var(--black);
+  color: var(--text-light);
+  border: 2px solid var(--pink);
+}
 
+body.dark-mode form {
+  background-color: var(--pink);
+  color: var(--black);
+}
+
+body.dark-mode form label {
+  color: var(--black);
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background-color: var(--text-dark);
+  color: var(--black);
+}
+
+body.dark-mode footer {
+  background-color: var(--peach);
+  color: var(--black);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .gallery-track img,
+  .gallery-track video {
+    width: 90%;
+  }
+
+  .gallery-prev,
+  .gallery-next {
+    padding: 0.5rem;
+  }
+}
