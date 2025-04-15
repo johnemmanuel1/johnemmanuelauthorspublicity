@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Emmanuel | Professional Book Promoter</title>
+  <style>
+    :root {
+      --peach: #ffcab0;
+      --pink: #ff4d94;
+      --black: #111;
+      --light-bg: #fff0f5;
+      --dark-bg: #1a1a1a;
+      --text-light: #f5f5f5;
+      --text-dark: #111;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--light-bg);
+      color: var(--black);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background-color: var(--pink);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .toggle-btn {
+      background: var(--peach);
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      color: var(--pink);
+    }
+
+    .about, .services, .contact {
+      background: white;
+      margin-bottom: 2rem;
+      border-left: 6px solid var(--peach);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .popup {
+      display: none;
+      background-color: var(--peach);
+      padding: 1rem;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      border: 2px solid var(--pink);
+      border-radius: 8px;
+      z-index: 100;
+    }
+
+    .popup button {
+      margin-top: 10px;
+      background: var(--pink);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid var(--pink);
+      border-radius: 5px;
+    }
+
+    form button {
+      background: var(--pink);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    body.dark {
+      background: var(--dark-bg);
+      color: var(--text-light);
+    }
+
+    body.dark header, body.dark footer {
+      background: var(--black);
+    }
+
+    body.dark .about, body.dark .services, body.dark .contact {
+      background: #333;
+      border-left: 6px solid var(--pink);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Mode</button>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <h2>About John Emmanuel</h2>
+    <p>
+      I'm a passionate book promoter and website developer dedicated to helping authors showcase their work professionally.
+      I specialize in creating custom author websites that increase visibility and build trust with readers and publishers.
+      Even though I’m just getting started, I’ve already helped several authors stand out online.
+    </p>
+  </section>
+
+  <section class="services" id="services">
+    <h2>What I Offer</h2>
+    <ul>
+      <li>Professional Author Website Development</li>
+      <li>Book Promotion Strategy & Marketing</li>
+      <li>Custom Book Trailer & Mockup Designs</li>
+      <li>Amazon A+ Content-style Designs</li>
+      <li>Affordable Pricing with High Quality Work</li>
+    </ul>
+    <button onclick="showPopup()">More Info</button>
+  </section>
+
+  <div class="popup" id="popup">
+    <p>I work closely with each client to bring their book to life online. My goal is to build long-term partnerships, not just complete one-time jobs.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 John Emmanuel. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    function showPopup() {
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
