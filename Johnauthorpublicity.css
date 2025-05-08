@@ -1,4 +1,4 @@
-/* === General Reset === */
+/* General Reset and Styling */
 * {
   margin: 0;
   padding: 0;
@@ -7,227 +7,171 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #ffdee9; /* peach-pink gradient base */
-  background: linear-gradient(to right, #ffdee9, #b5b3ff);
-  color: #000;
-  line-height: 1.6;
-  transition: background 0.4s ease, color 0.4s ease;
-  padding: 20px;
+  background: linear-gradient(to right, pink, purple);
+  color: black;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
-/* === Dark Mode === */
-body.dark-mode {
-  background: #222;
-  color: #eee;
-}
-
-/* === Logo === */
-.circular-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto;
-  display: block;
-}
-
-/* === Header === */
 header {
   text-align: center;
-  margin-bottom: 20px;
+  padding: 2rem;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-top: 10px;
+.circular-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-#dark-mode-toggle {
-  background: #ff69b4;
-  border: none;
-  color: #000;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-/* === Navigation === */
-nav {
-  background: #b5b3ff;
-  border-radius: 10px;
-  margin-bottom: 30px;
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.8rem 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #000;
+  color: black;
   font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: background 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  background: #ff69b4;
-  color: #fff;
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
-/* === Section === */
-section {
-  max-width: 700px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+.intro {
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 1rem;
+  border-radius: 1rem;
 }
 
-/* === Form === */
-form {
+.intro ul {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.gallery-section {
+  margin: 2rem 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.gallery-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+.gallery-track {
   display: flex;
-  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  gap: 1rem;
 }
 
-form label {
-  margin-top: 15px;
-  font-weight: bold;
+.gallery-track img,
+.gallery-track video {
+  width: 300px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 1rem;
+  flex-shrink: 0;
 }
 
-form input,
-form textarea {
-  padding: 10px;
-  margin-top: 5px;
-  border: 2px solid #ff69b4;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: #fff0f5;
-  color: #000;
-}
-
-form button {
-  margin-top: 20px;
-  padding: 12px;
-  background: #b5b3ff;
-  color: #000;
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  color: white;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  z-index: 1;
 }
 
-form button:hover {
-  background: #ff69b4;
-  color: #fff;
+.gallery-prev {
+  left: 0.5rem;
 }
 
-/* === Form Status === */
-.form-status {
-  margin-top: 10px;
-  padding: 10px;
-  font-weight: bold;
-  display: none;
+.gallery-next {
+  right: 0.5rem;
 }
 
-.form-status.success {
-  color: green;
-}
-
-.form-status.error {
-  color: red;
-}
-
-/* === Socials Section === */
-.socials {
-  margin-top: 30px;
-  background: #fce4ec;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.socials a {
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.socials a:hover {
-  color: #ff69b4;
-}
-
-/* === Footer === */
+/* Footer */
 footer {
+  background-color: rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #444;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
 }
 
-/* === Dark Mode Adjustments === */
-body.dark-mode header,
-body.dark-mode section,
-body.dark-mode .socials,
-body.dark-mode nav {
-  background: #333;
-  color: #eee;
+/* Dark Mode */
+body.dark-mode {
+  background: #111;
+  color: white;
+}
+
+body.dark-mode nav ul {
+  background-color: #222;
 }
 
 body.dark-mode nav ul li a {
-  color: #eee;
+  color: white;
 }
 
-body.dark-mode nav ul li a.active,
-body.dark-mode nav ul li a:hover {
-  background: #ff69b4;
-  color: #000;
-}
-
-body.dark-mode form input,
-body.dark-mode form textarea {
-  background: #444;
-  color: #fff;
-  border-color: #ff69b4;
-}
-
-body.dark-mode form button {
-  background: #ff69b4;
-  color: #000;
-}
-
-body.dark-mode .socials {
-  background: #444;
+body.dark-mode .intro,
+body.dark-mode .gallery-section {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode footer {
-  color: #aaa;
+  background-color: #222;
 }
 
-/* === Responsive === */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .gallery-track {
+    gap: 0.5rem;
   }
 
-  section {
-    padding: 20px;
+  .gallery-track img,
+  .gallery-track video {
+    width: 250px;
   }
 
-  .circular-logo {
-    width: 60px;
-    height: 60px;
+  nav ul li {
+    margin: 0.5rem;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-track img,
+  .gallery-track video {
+    width: 200px;
   }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
