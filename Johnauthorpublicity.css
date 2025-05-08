@@ -99,7 +99,7 @@ section {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Gallery Slider */
+/* Gallery Slider - Shared for Mockups & Trailers */
 .gallery-slider {
   position: relative;
   overflow: hidden;
@@ -150,6 +150,53 @@ section {
 
 .gallery-next {
   right: 10px;
+}
+
+/* Contact Section */
+#contact-section {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background: var(--peach-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid var(--main-pink);
+  font-size: 16px;
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #333;
+  color: white;
+}
+
+.contact-form button {
+  background: var(--main-pink);
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--hover-color);
 }
 
 /* Footer */
