@@ -245,4 +245,23 @@ body.dark-mode footer {
   section {
     padding: 20px;
   }
+  /* === Fix for mobile overflow caused by long email === */
+.socials {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.socials a {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
+}
+body {
+  outline: 5px dashed red;
+  overflow-x: hidden;
+}
+.socials p {
+  text-align: center;
+}
 }
