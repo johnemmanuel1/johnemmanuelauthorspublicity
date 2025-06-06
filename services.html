@@ -24,12 +24,78 @@
   <meta name="twitter:image" content="mockups/mockup4.jpg" />
 
   <link rel="stylesheet" href="Johnauthorpublicity.css"/>
+  <style>
+    /* Slider button styles */
+    .slider-btn {
+      cursor: pointer;
+      font-size: 2.5rem;
+      background: transparent;
+      border: none;
+      color: #ff69b4; /* pink */
+      padding: 0 15px;
+      user-select: none;
+      transition: color 0.3s ease;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    .slider-btn:hover {
+      color: #ff1493; /* deeper pink */
+    }
+    .prev-btn {
+      left: 0;
+    }
+    .next-btn {
+      right: 0;
+    }
+
+    /* Slider container positioning */
+    #mockup-gallery {
+      position: relative;
+      max-width: 700px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    #mockup-gallery .slider {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    #mockup-gallery .slider img {
+      min-width: 100%;
+      flex-shrink: 0;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode a {
+      color: #ffb6c1; /* light pink */
+    }
+    body.dark-mode footer {
+      background-color: #222;
+      color: #ddd;
+    }
+    body.dark-mode .slider-btn {
+      color: #ffb6c1;
+    }
+    body.dark-mode .slider-btn:hover {
+      color: #ff69b4;
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="JOHN EMMANUEL.png" alt="John Emmanuel Logo" class="circular-logo" />
     <h1>Our Services</h1>
-    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    <button id="dark-mode-toggle">Dark Mode</button>
   </header>
 
   <nav>
@@ -97,17 +163,17 @@
 
     <!-- Mockup Slider -->
     <section id="mockup-gallery">
-  <h2>Book Mockup Samples</h2>
-  <div class="slider">
-    <img src="mockups/mockup%203.jpg" alt="Mockup 3" />
-    <img src="mockups/mockup%203i.jpg" alt="Mockup 3i" />
-    <img src="mockups/mockup%204i.jpg" alt="Mockup 4i" />
-    <img src="mockups/mockup%204ii.jpg" alt="Mockup 4ii" />
-    <img src="mockups/mockup%204iii.jpg" alt="Mockup 4iii" />
-    <img src="mockups/mockup%204iv.jpg" alt="Mockup 4iv" />
-    <img src="mockups/mockup4.jpg" alt="Mockup 4" />
-  </div>
-</section>
+      <h2>Book Mockup Samples</h2>
+      <div class="slider">
+        <img src="mockups/mockup%203.jpg" alt="Mockup 3" />
+        <img src="mockups/mockup%203i.jpg" alt="Mockup 3i" />
+        <img src="mockups/mockup%204i.jpg" alt="Mockup 4i" />
+        <img src="mockups/mockup%204ii.jpg" alt="Mockup 4ii" />
+        <img src="mockups/mockup%204iii.jpg" alt="Mockup 4iii" />
+        <img src="mockups/mockup%204iv.jpg" alt="Mockup 4iv" />
+        <img src="mockups/mockup4.jpg" alt="Mockup 4" />
+      </div>
+    </section>
 
     <!-- Trailer Section -->
     <section id="book-trailers">
@@ -129,11 +195,61 @@
   </section>
 
   <footer>
-    <p>📧 Contact: <a href="mailto:johnemmanuelauthorspublicity@gmail.com" style="color: white; text-decoration: underline;">johnemmanuelauthorspublicity@gmail.com</a></p>
+    <p>© 2025 John Emmanuel Authors Publicity. All rights reserved.</p>
   </footer>
 
   <script src="Johnauthorpublicity.js"></script>
+  <script>
+    // Inline JS for slider and dark mode toggle
+
+    // Slider functionality for Book Mockups
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.querySelector('#mockup-gallery .slider');
+      const images = slider.querySelectorAll('img');
+      let currentIndex = 0;
+
+      // Create Prev and Next buttons dynamically
+      const prevBtn = document.createElement('button');
+      prevBtn.classList.add('slider-btn', 'prev-btn');
+      prevBtn.innerHTML = '&#10094;'; // Left arrow
+      const nextBtn = document.createElement('button');
+      nextBtn.classList.add('slider-btn', 'next-btn');
+      nextBtn.innerHTML = '&#10095;'; // Right arrow
+
+      // Append buttons to mockup-gallery
+      const gallery = document.getElementById('mockup-gallery');
+      gallery.appendChild(prevBtn);
+      gallery.appendChild(nextBtn);
+
+      function updateSlider() {
+        const width = images[0].clientWidth + 10; // image width + margin-right
+        slider.style.transform = `translateX(${-currentIndex * width}px)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider();
+      });
+
+      // Responsive update on window resize
+      window.addEventListener('resize', updateSlider);
+
+      // Dark mode toggle
+      const darkToggle = document.getElementById('dark-mode-toggle');
+      darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if(document.body.classList.contains('dark-mode')){
+          darkToggle.textContent = 'Light Mode';
+        } else {
+          darkToggle.textContent = 'Dark Mode';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-  
