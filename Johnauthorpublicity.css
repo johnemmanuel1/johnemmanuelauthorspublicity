@@ -268,4 +268,19 @@ body {
 .socials p {
   text-align: center;
 }
+/*  == mockup-gallery ==*/
+  #mockup-gallery .slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#mockup-gallery img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
 }
