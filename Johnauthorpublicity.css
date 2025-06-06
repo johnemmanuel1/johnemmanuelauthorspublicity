@@ -272,17 +272,69 @@ body.dark-mode footer {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
-
-#mockup-gallery .slider::-webkit-scrollbar {
-  display: none;
+/* Slider button styles */
+.slider-btn {
+  cursor: pointer;
+  font-size: 2.5rem;
+  background: transparent;
+  border: none;
+  color: #ff69b4; /* pink */
+  padding: 0 15px;
+  user-select: none;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.slider-btn:hover {
+  color: #ff1493; /* deeper pink */
+}
+.prev-btn {
+  left: 0;
+}
+.next-btn {
+  right: 0;
 }
 
-#mockup-gallery img {
-  max-width: 300px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  scroll-snap-align: center;
+/* Slider container positioning */
+#mockup-gallery {
+  position: relative;
+  max-width: 700px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#mockup-gallery .slider {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+#mockup-gallery .slider img {
+  min-width: 100%;
+  flex-shrink: 0;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode a {
+  color: #ffb6c1; /* light pink */
+}
+body.dark-mode footer {
+  background-color: #222;
+  color: #ddd;
+}
+body.dark-mode .slider-btn {
+  color: #ffb6c1;
+}
+body.dark-mode .slider-btn:hover {
+  color: #ff69b4;
 }
 
 /* === Debug === */
