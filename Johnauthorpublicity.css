@@ -337,6 +337,65 @@ body.dark-mode .slider-btn:hover {
   color: #ff69b4;
 }
 
+.services-intro {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+.services-intro h2 {
+  color: #ff69b4;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.services-intro p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-item {
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.service-item:hover {
+  transform: translateY(-5px);
+}
+.service-item h3 {
+  color: #ff1493;
+  margin-bottom: 10px;
+}
+.service-item p {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.services-closing {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 1rem;
+  padding: 0 20px;
+  max-width: 700px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffd1dc;
+  color: black;
+  margin-top: 40px;
+}
+
+
 /* === Debug === */
 /* body {
   outline: 5px dashed red;
