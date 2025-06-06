@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #ffdee9; /* peach-pink gradient base */
-  background: linear-gradient(to right, #ffdee9, #b5b3ff);
+  background: linear-gradient(to right, #ffdee9, #b5b3ff); /* peach-pink gradient base */
   color: #000;
   line-height: 1.6;
   transition: background 0.4s ease, color 0.4s ease;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 /* === Dark Mode === */
@@ -156,12 +156,22 @@ form button:hover {
   padding: 20px;
   border-radius: 15px;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.socials p {
+  text-align: center;
 }
 
 .socials a {
   color: #000;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .socials a:hover {
@@ -175,10 +185,12 @@ footer {
   font-size: 0.9rem;
   color: #444;
 }
+
 footer a:hover,
 footer a.active {
   background: #ff69b4;
   color: #fff;
+}
 
 /* === Dark Mode Adjustments === */
 body.dark-mode header,
@@ -249,31 +261,20 @@ body.dark-mode footer {
   section {
     padding: 20px;
   }
-  /* === Fix for mobile overflow caused by long email === */
-.socials {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
 }
 
-.socials a {
-  display: inline-block;
-  max-width: 100%;
-  word-break: break-word;
-}
-body {
-  outline: 5px dashed red;
-  overflow-x: hidden;
-}
-.socials p {
-  text-align: center;
-}
-/*  == mockup-gallery ==*/
-  #mockup-gallery .slider {
+/* === Slider for mockups === */
+#mockup-gallery .slider {
   display: flex;
   overflow-x: auto;
   gap: 1rem;
   padding: 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+#mockup-gallery .slider::-webkit-scrollbar {
+  display: none;
 }
 
 #mockup-gallery img {
@@ -281,6 +282,10 @@ body {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  scroll-snap-align: center;
 }
 
-}
+/* === Debug === */
+/* body {
+  outline: 5px dashed red;
+} */
