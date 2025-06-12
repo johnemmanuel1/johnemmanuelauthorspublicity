@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://johnemmanuel1.github.io/johnemmanuelauthorspublicity/sitemap.xml
